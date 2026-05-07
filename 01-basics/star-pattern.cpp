@@ -78,6 +78,29 @@ int main() {
         // Move to the next line after printing stars for one row.
         printf("\n");
     }
-
+    
+    
+    
+    printf("Reflection of the output on the y-axis:\n");
+     
+    for (int i = star; i >0; i--) {   
+        for (int j = 0; j < i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+    
+    printf("Or\n");
+    for (int i = 0; i <star; i++) {   
+        for (int j = 0; j < star-i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    };
+        
+    
+    
     return 0;
 }
+

@@ -81,26 +81,86 @@ int main() {
     
     
     
-    printf("Reflection of the output on the y-axis:\n");
-     
-    for (int i = star; i >0; i--) {   
-        for (int j = 0; j < i; j++) {
-            printf("*");
-        }
-        printf("\n");
+printf("Reflection of the output on the y-axis:\n");
+
+/*
+This part prints the reversed version of the first triangle.
+
+If star = 5, the output becomes:
+
+*****
+****
+***
+**
+*
+
+Here, the number of stars decreases in each row.
+*/
+
+/*
+First method:
+
+Outer loop:
+i starts from star and decreases until 1.
+
+If star = 5:
+i = 5 -> print 5 stars
+i = 4 -> print 4 stars
+i = 3 -> print 3 stars
+i = 2 -> print 2 stars
+i = 1 -> print 1 star
+*/
+for (int i = star; i > 0; i--) {
+
+    /*
+    Inner loop:
+    j starts from 0 and continues while j < i.
+
+    So the number of printed stars depends on the current value of i.
+    */
+    for (int j = 0; j < i; j++) {
+        printf("*");
     }
-    
-    
-    printf("Or\n");
-    for (int i = 0; i <star; i++) {   
-        for (int j = 0; j < star-i; j++) {
-            printf("*");
-        }
-        printf("\n");
-    };
-        
-    
-    
+
+    // Move to the next line after one row is printed.
+    printf("\n");
+}
+
+
+printf("Or\n");
+
+/*
+Second method:
+
+This method gives the same output, but the outer loop increases normally.
+
+Instead of decreasing i, we calculate the number of stars as:
+
+    star - i
+
+If star = 5:
+i = 0 -> star - i = 5 -> print 5 stars
+i = 1 -> star - i = 4 -> print 4 stars
+i = 2 -> star - i = 3 -> print 3 stars
+i = 3 -> star - i = 2 -> print 2 stars
+i = 4 -> star - i = 1 -> print 1 star
+*/
+for (int i = 0; i < star; i++) {
+
+    /*
+    Inner loop:
+    j prints stars from 0 to star - i - 1.
+
+    This makes the number of stars decrease by one in each row.
+    */
+    for (int j = 0; j < star - i; j++) {
+        printf("*");
+    }
+
+    // Move to the next line after one row is printed.
+    printf("\n");
+}
     return 0;
 }
+
 
